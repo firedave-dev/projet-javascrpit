@@ -1,1 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo Pays - Projet 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Météo Pays</h1>
+        
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Entrez un pays ou une ville..." required>
+            <button type="submit">Rechercher</button>
+        </form>
 
+        <div id="history-container">
+            <p><strong>Dernières recherches :</strong></p>
+            <div id="history"></div>
+        </div>
+
+        <div id="loader" class="hidden">Chargement en cours...</div>
+        <div id="result"></div>
+
+        <hr>
+        <h3>⭐ Mes Favoris</h3>
+        <div id="favorites-list"></div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
