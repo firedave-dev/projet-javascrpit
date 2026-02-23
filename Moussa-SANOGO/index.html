@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Contacts RH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contacts RH : SANOGO S.A.R.L</h1>
+    </header>
 
+    <main>
+        <section id="add-contact-section">
+           <h3>Ajouter un nouveau contact</h3>
+          <form id="contactForm">
+           <label for="nom">Nom :</label>
+           <input type="text" id="nom" placeholder="Nom" required>
+
+           <label for="prenom">Prénom :</label>
+           <input type="text" id="prenom" placeholder="Prénom" required>
+
+         <label for="email">Email :</label>
+         <input type="email" id="email" placeholder="Email (ex: nom@entreprise.com)" required>
+
+         <label for="tel">Téléphone :</label>
+         <input type="tel" id="tel" placeholder="Téléphone (ex: 12345678)" 
+               pattern="[0-9]{8}" title="Veuillez entrer 8 chiffres" required>
+
+         <label for="role">Rôle :</label>
+         <select id="role" required>
+            <option value="" disabled selected>Choisir un rôle</option>
+            <option value="directeur_general">Directeur Général</option>
+            <option value="directeur_rh">Directeur RH</option>
+            <option value="responsable_recrutement">Responsable Recrutement</option>
+            <option value="gestionnaire_paie">Gestionnaire de Paie</option>
+            <option value="assistant_rh">Assistant RH</option>
+            <option value="responsable_formation">Responsable Formation</option>
+            <option value="chef_projet">Chef de Projet</option>
+            <option value="developpeur">Développeur</option>
+            <option value="designer">Designer / UI-UX</option>
+            <option value="analyste">Analyste</option>
+            <option value="responsable_marketing">Responsable Marketing</option>
+            <option value="commercial">Commercial / Ventes</option>
+            <option value="comptable">Comptable</option>
+            <option value="responsable_admin">Responsable Administratif</option>
+            <option value="support_it">Support IT</option>
+            <option value="stagiaire">Stagiaire / Apprenti</option>
+        </select>
+
+             <button type="submit" id="btnAdd">Ajouter le contact</button>
+    </form>
+        </section>
+
+
+        <hr>
+         <h2>La liste des membres de l'entreprise</h2>
+        <section id="search-section">
+            <input type="text" id="searchInput" placeholder="Filtrer par nom ou rôle...">
+        </section>
+
+        <section id="list-section">
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                        <th>Rôle</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="contactList"></tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="storage-section">
+            <h3>Import / Export de données</h3>
+            <div class="json-controls">
+                <textarea id="jsonArea" rows="5" placeholder="Collez votre code JSON ici..."></textarea>
+                <div class="buttons">
+                    <button id="btnImport">Importer depuis le texte</button>
+                    <button id="btnExport">Télécharger la sauvegarde (.json)</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Gestion RH - SANOGO S.A.R.L</p>
+        <div class="footer-status">
+            <span class="status-dot"></span> Système Opérationnel
+        </div>
+    </div>
+</footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
